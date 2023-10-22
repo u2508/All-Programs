@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+	<title>Profile Dashboard</title>
+	<style>
+		/* Styles for the cover and profile pictures */
+		#cover-image {
+			width: 100%;
+			height: 200px;
+			background-color: #ccc;
+			background-image:'Adobe_Express_20220521_1039420.5289279770329197.jpg' ;
+			background-size: cover;
+			background-position: center;
+		}
+
+		#profile-image {
+			width: 150px;
+			height: 150px;
+			border-radius: 50%;
+			background-color: #fff;
+			background-image: url(https://yt3.ggpht.com/oxkUJxvquP-l6Z7hsT1AP1kJW2OysZPSkZIEMAQpRRavYcN4BhvJnGgUVw_yfeKLIynwPP6vSA=s108-c-k-c0x00ffffff-no-rj);
+			background-size: cover;
+			background-position: center;
+			position: relative;
+			top: -75px;
+			left: 25px;
+			border: 5px solid #fff;
+			box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+		}
+	</style>
+</head>
+<body>
+	<div id="cover-image"></div>
+	<div id="profile-image"></div>
+
+	<script>
+		// Function to change the cover picture
+		function changeCoverImage() {
+			var coverImage = document.getElementById("cover-image");
+			var imageURL = prompt("Enter the URL of the new cover image:");
+
+			if (imageURL) {
+				coverImage.style.backgroundImage = "url('" + imageURL + "')";
+			}
+		}
+
+		// Function to change the profile picture
+		function changeProfileImage() {
+			var profileImage = document.getElementById("profile-image");
+			var imageURL = prompt("Enter the URL of the new profile image:");
+            
+			if (imageURL) {
+				profileImage.style.backgroundImage ="url('" + imageURL + "')";
+                
+			}
+		}
+
+		// Add event listeners to the images
+		var coverImage = document.getElementById("cover-image");
+		coverImage.addEventListener("click", changeCoverImage);
+
+		var profileImage = document.getElementById("profile-image");
+		profileImage.addEventListener("click", changeProfileImage);
+	</script>
+</body>
+</html>

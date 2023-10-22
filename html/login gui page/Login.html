@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Login Page</title>
+    <style>
+      body {
+        background-color: rgb(9, 255, 0);
+        font-size:32px;
+      }
+      button {
+        color: white;
+        font-size: 36px;
+        font-weight: bold;
+        border-radius: 5px;
+        cursor: pointer;
+        margin: 70px;
+        background-color: aqua;
+      }
+    </style>
+  </head>
+  <body>
+    <CENTER><h2>Login</h2></CENTER>
+    <form>
+      <label for="username">Username:</label>
+      <input type="text" id="username" name="username" ><br><br>
+      <label for="password">Password:</label>
+      <input type="password" id="password" name="password" ><br><br>
+      <button type="button" onclick="login()">Login</button>
+    </form>
+    <p id="message"></p>
+
+    <script>
+      function login() {
+        var username = document.getElementById("username").value;
+        var password = document.getElementById("password").value;
+        if (username === "admin" && password === "password") {
+          // redirect to the dashboard page
+          window.location.href = "dashboard.html";
+        } 
+        else if(username === "root" && password === "1900") {
+          // redirect to the dashboard page
+          window.location.href = "dashboard.html";
+        } else {
+          document.getElementById("message").innerHTML = "Invalid username or password";
+        }
+      }
+    </script>
+  </body>
+</html>

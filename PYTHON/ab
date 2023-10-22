@@ -1,0 +1,24 @@
+for video in videos:
+            title_element = video.find_element_by_xpath(".//a[@id='video-title']")
+            title = title_element.get_attribute("title")
+            similarity_score = SequenceMatcher(None, search_term.lower(), title.lower()).ratio()
+            title_similarity_scores[title] = similarity_score
+        if len(title_similarity_scores) > 0:
+            sorted_titles = sorted(title_similarity_scores, key=title_similarity_scores.get, reverse=True)
+            top_video_title = sorted_titles[0]
+            top_video_element = None
+            for video in videos:
+                title_element = video.find_element_by_xpath(".//a[@id='video-title']")
+                title = title_element.get_attribute("title")
+                if title == top_video_title:
+                    top_video_element = video
+                    break
+            if top_video_element:
+                top_video_element.click()
+                time.sleep(5)
+                play_button = driver.find_element_by_xpath("//button[@aria-label='Play (k)']")
+                play_button.click()
+            else:
+                print("Failed to select video. Please try again.")
+        else:
+            print("No videos found. Please try again with a different search term.")

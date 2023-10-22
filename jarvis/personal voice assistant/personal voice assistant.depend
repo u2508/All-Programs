@@ -1,0 +1,10 @@
+# depslib dependency file v1.0
+1641724206 source:e:\sem 3\personal voice assistant\main.cpp
+	<bits/stdc++.h>
+	<windows.h>
+	<string.h>
+	<ctime>
+	<cstdlib>
+	<stdio.h>
+	<iostream>
+

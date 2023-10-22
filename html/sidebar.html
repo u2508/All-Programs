@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Side Bar Example</title>
+    <style>
+      body {
+        margin: 0;
+        padding: 0;
+      }
+      .sidebar {
+        height: 100%;
+        width: 200px;
+        position: fixed;
+        top: 20;
+        left: 0;
+        background-color: #333;
+        padding: 20px;
+        transform: translateX(-235px);
+        transition: all 0.3s ease;
+      }
+      .sidebar.hidden {
+        transform: translateX(0px);
+      }
+      .sidebar a {
+        display: block;
+        color: white;
+        padding: 10px;
+        margin-bottom: 10px;
+        text-decoration: none;
+        font-size: 28px;
+        ;
+      }
+      .sidebar a:hover {
+        background-color: #555;
+        font-size: 32px;
+        color: rgb(255, 0, 0);
+        
+      }
+      .content {
+        margin-left: 400px;
+        padding: 20px;
+      }
+      .circular-button {
+        display: inline-block;
+        border-radius: 50%;
+        background-color: #4CAF50;
+        color: #050000;
+        font-size: 20px;
+        text-align: center;
+        width: 50px;
+        height: 50px;
+        line-height: 50px;
+        text-decoration: none;
+        
+        transform: translateX(-350px) translateY(-100px);
+      }
+      .circular-button.hidden {
+        transform: translateX(-500px) translateY(-100px);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="sidebar">
+      <a href="#">Profile</a>
+      <a href="#">Button 1</a>
+      <a href="#">Button 2</a>
+      <a href="#">Button 3</a>
+    </div>
+    <div class="content">
+      <h1>Main Content</h1>
+      <p>This is the main content of the page.</p>
+      <button onclick="toggleSidebar()" class="circular-button"></button>
+
+    </div>
+    <script>
+      function toggleSidebar() {
+        var sidebar = document.querySelector('.sidebar');
+        var circle=document.querySelector('.circular-button');
+        sidebar.classList.toggle('hidden');
+        circle.classList.toggle("hidden");
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Registration Page</title>
+  </head>
+  <body>
+    <h1>Registration Page</h1>
+    <form id="registration-form">
+      <label for="name">Name:</label>
+      <input type="text" id="name" name="name" required>
+      <br>
+      <label for="email">Email:</label>
+      <input type="email" id="email" name="email" required>
+      <br>
+      <label for="dob">Date of Birth:</label>
+      <input type="date" id="dob" name="dob" required>
+      <br>
+      <button type="submit">Register</button>
+    </form>
+
+    <script>
+      // Get the registration form element
+      const registrationForm = document.getElementById("registration-form");
+
+      // Add an event listener for form submission
+      registrationForm.addEventListener("submit", (event) => {
+        // Prevent the default form submission behavior
+        event.preventDefault();
+
+        // Get the form data
+        const formData = new FormData(registrationForm);
+
+        // Create an object to store the form data
+        const registrationData = {};
+
+        // Loop through the form data and add it to the object
+        for (let [key, value] of formData.entries()) {
+          registrationData[key] = value;
+        }
+
+        // Send the registration data to the server
+        const xhr = new XMLHttpRequest();
+        xhr.open("POST", "/register");
+        xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
+        xhr.send(JSON.stringify(registrationData));
+
+        // Clear the form
+        registrationForm.reset();
+      });
+    </script>
+  </body>
+</html>
+

@@ -1,0 +1,2 @@
+Formation of partial differential equations by eliminating arbitrary constants & arbitrary functions - Solutions of standard types of first order partial differential equations - Lagrange’s linear equation 
+-Linear partial differential equations of second and higher order with constant coefficients of homogeneous types.
